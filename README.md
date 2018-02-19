@@ -16,8 +16,8 @@ In order to activate the interactive utility mode, you have to launch it without
     AUTHORIZATION. In this step, you only need to specify the username, of a user, who was registered earlier.
 	
 2. After autorization you will see command menu, where user can execute some operations.
-
-                              	  		  OPERATIONS
+						
+						OPERATIONS
 	
 	1. Sell beverages. To sell beverages, you must enter the beverage itself and its additive(if the additive is not 	  needed just enter 'none'). After each sale last bill of current salesman will be automatically overwritten.
 	2. See the beverage cost. Just enter the name of beverage.
