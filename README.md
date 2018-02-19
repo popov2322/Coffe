@@ -1,7 +1,8 @@
 To launch this utility you have to enter following commands:
 
-**$cd ~/path/to/this/directory(This command is used to move into utility's directory. It's needed for correct work of database)
-$python main.py**
+**$cd ~/path/to/this/directory(This command is used to move into utility's directory. It's needed for correct work of database)**
+
+**$python main.py**
 
 ### INTERACTIVE MODE
 
