@@ -1,7 +1,7 @@
 To launch this utility you have to enter following commands:
 
-$cd ~/path/to/this/directory(This command is used to move into utility's directory. It's needed for correct work of database)
-$python main.py
+**$cd ~/path/to/this/directory(This command is used to move into utility's directory. It's needed for correct work of database)
+$python main.py**
 
 ### INTERACTIVE MODE
 
@@ -18,7 +18,6 @@ In order to activate the interactive utility mode, you have to launch it without
 * After autorization you will see command menu, where user can execute some operations.
 						
 ### OPERATIONS
-	
 	
 	* Sell beverages. To sell beverages, you must enter the beverage itself and its additive(if the additive is not 	  needed just enter 'none'). After each sale last bill of current salesman will be automatically overwritten.
 	* See the beverage cost. Just enter the name of beverage.
@@ -57,11 +56,11 @@ Register a new manager:
 $python main.py -cmd -reg -u Artem -p Manager
 
 Manager artem view sales report:
-$python main.py -cmd -u Artem -action 4
+**$python main.py -cmd -u Artem -action 4**
 
 Register a new salesman:
-$python main.py -cmd -reg -u Vikentsiy -p Salesman
+**$python main.py -cmd -reg -u Vikentsiy -p Salesman**
 
 The seller Vikentiy sells latte with nothing:
-$python main.py -cmd -u Vikentsiy -action 1 -b latte -a none
+**$python main.py -cmd -u Vikentsiy -action 1 -b latte -a none**
 
