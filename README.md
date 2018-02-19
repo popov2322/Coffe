@@ -51,7 +51,7 @@ To execute any actions in command line just launch utility with key -cmd:
 
 -a, --additionals	- after this key enter the beverage to drink
 
-Examples of working with keys:
+#### Examples of working with keys:
 
 Register a new manager:
 **$python main.py -cmd -reg -u Artem -p Manager**
