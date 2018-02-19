@@ -3,7 +3,7 @@ To launch this utility you have to enter following commands:
 $cd ~/path/to/this/directory(This command is used to move into utility's directory. It's needed for correct work of database)
 $python main.py
 
-    					INTERACTIVE MODE
+    					   INTERACTIVE MODE
 
 In order to activate the interactive utility mode, you have to launch it without arguments(execute the commands, which were given above):
 
