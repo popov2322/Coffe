@@ -3,7 +3,7 @@ To launch this utility you have to enter following commands:
 $cd ~/path/to/this/directory(This command is used to move into utility's directory. It's needed for correct work of database)
 $python main.py
 
-    INTERACTIVE MODE
+    						INTERACTIVE MODE
 
 In order to activate the interactive utility mode, you have to launch it without arguments(execute the commands, which were given above):
 
@@ -17,16 +17,16 @@ In order to activate the interactive utility mode, you have to launch it without
 	
 2. After autorization you will see command menu, where manager can see sales report(4) and salesman can sell beverages with additives(1), see cost of drinks(2) or load last bill(3).
 
-                                OPERATIONS
+                              	  		  OPERATIONS
 	
-	(1) Sell beverages. To sell beverages, you must enter the beverage itself and its additive(if the additive is not needed just enter 'none'). After each sale last bill of current salesman will be automatically overwritten.
+	(1) Sell beverages. To sell beverages, you must enter the beverage itself and its additive(if the additive is not 	  needed just enter 'none'). After each sale last bill of current salesman will be automatically overwritten.
 	(2) See the beverage cost. Just enter the name of beverage.
 	(3) Load last bill
 	(4) See sales report
 	(5) Exit
 
 
-    WORKING WITH KEYS IN THE COMMAND LINE
+    					WORKING WITH KEYS IN THE COMMAND LINE
         
 To execute any actions in command line just launch utility with key -cmd:
 
