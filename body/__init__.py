@@ -13,5 +13,3 @@ from body.users_menu import *
 from body.constants import *
 from body.sales import *
 from body.configured_logger import *
-
-"""Данный файл содержит в себе импорт библиотек данного пакета и проверки происходящие при каждом запуске программы"""

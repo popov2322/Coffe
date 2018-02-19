@@ -4,7 +4,7 @@
 __author__ = "Popov Dmitriy"
 
 import sqlite3
-import os
+from os import path, makedirs
 from body.constants import *
 from body.configured_logger import *
 
@@ -14,8 +14,10 @@ class DataBase(object):
     def __init__(self, username, position, func):
         self.username = username
         self.position = position
-        if not os.path.exists(DBPath.db_path):
-            os.makedirs(DBPath.db_path)
+        self.number_of_sales = None
+        self.total_value = None
+        if not path.exists(DBPath.db_path):
+            makedirs(DBPath.db_path)
             progress_logger.info("directory for db created")
         getattr(DataBase, func)(self)
 
@@ -33,11 +35,10 @@ class DataBase(object):
     @staticmethod
     def check_db_for_user(name):
         connect = sqlite3.connect(DBPath.db_file_path)
-        # Создание курсора
         cursor = connect.cursor()
         cursor.execute("SELECT rowid FROM users WHERE name = ?", (name,))
         data = cursor.fetchone()
-        if not data is None:
+        if data is not None:
             progress_logger.info("User exists")
             return True
         else:
@@ -49,7 +50,6 @@ class DataBase(object):
     def save_user(self):
         progress_logger.info("Creating new user in DB...")
         connect = sqlite3.connect(DBPath.db_file_path)
-        # Создание курсора
         cursor = connect.cursor()
         DataBase.create_db(cursor)
         check = DataBase.check_db_for_user(self.username)
@@ -58,18 +58,15 @@ class DataBase(object):
                 '''CREATE TABLE IF NOT EXISTS users 
                             (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,name TEXT,
                              position TEXT, number_of_sales INTEGER, total_value INTEGER)'''
-                # Наполнение таблицы
                 cursor.execute(
-                    "INSERT INTO users (name,position,number_of_sales, total_value) VALUES ('{0}','{1}','{3}','{3}')"
-                        .format(self.username, self.position, 0, 0))
-                # Подтверждение отправки данных в базу
+                    "INSERT INTO users (name,position,number_of_sales, total_value) VALUES (?, ?, ?, ?)",
+                    (self.username, self.position, 0, 0))
                 connect.commit()
                 print_logger.info("{1} {0} successfully created".format(self.username, self.position))
                 progress_logger.info("{1} {0} successfully created".format(self.username, self.position))
             else:
                 error_logger.error("'{0}' aready in program u need to use another name.".format(self.username))
-            quit()
-        # Завершение соединения
+                quit()
         finally:
             cursor.close()
             connect.close()
@@ -96,7 +93,7 @@ class DataBase(object):
             cursor.close()
             connect.close()
 
-    '''Обновление количества продаж и итоговой суммы'''
+    '''Refreshing sales data'''
 
     @staticmethod
     def refresh_user(value, username):

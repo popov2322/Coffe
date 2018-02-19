@@ -18,13 +18,15 @@ class EntryMenu(object):
         self.username = username
         self.position = position
         self.cmd_line_args = operation
+        self.number_of_sales = None
+        self.total_value = None
         EntryMenu.choice_of_operation(self, operation)
 
     def choice_of_operation(self, operation):
         progress_logger.info("choice_of_operation Started")
         if operation is None:
             print_logger.info("What are you want to do?\n"
-                  "1 : Log in | 2 : Sign Up | 3 : Quit")
+                              "1 : Log in | 2 : Sign Up | 3 : Quit")
             operation = str(new_input("To select an operation, enter the appropriate number: "))
         if operation == "1":
             EntryMenu.log_in(self)
@@ -32,15 +34,12 @@ class EntryMenu(object):
         elif operation == "2":
             EntryMenu.registration(self)
         elif operation == "3":
-            print_logger.info("Good bye")
+            print_logger.info("Goodbye")
             progress_logger.info("Session finished")
             quit()
         else:
             error_logger.error("Wrong input ({0})! Check the entered value and try again.".format(operation))
         progress_logger.info("choice_of_operation Finished")
-
-
-
 
     """Check database for user and load him"""
 
@@ -49,10 +48,10 @@ class EntryMenu(object):
         if self.username is None:
             self.username = new_input("Enter your username: ")
         db = DataBase(self.username, self.position, func='load_user')
-        self.username, self.position, self.number_of_sales, self.total_value = \
-            db.username, db.position, db.number_of_sales, db.total_value
+        # self.username, self.position, self.number_of_sales, self.total_value = \
+        #     db.username, db.position, db.number_of_sales, db.total_value
+        self.username, self.position = db.username, db.position
         progress_logger.info("Authorization as {0} {1} completed".format(self.username, self.position))
-
 
     """Creating new user"""
 
@@ -67,10 +66,9 @@ class EntryMenu(object):
                     break
                 else:
                     error_logger.error("Position of worker might be only"
-                          " 'Salesman' or 'Manager'")
+                                       " 'Salesman' or 'Manager'")
         DataBase(self.username, self.position, 'save_user')
         progress_logger.info("Registration completed")
-
 
 
 if __name__ == '__main__':

@@ -4,7 +4,7 @@
 __author__ = "Popov Dmitriy"
 
 from body.shop_database import *
-from body.constants import *
+from body.constants import LongPrints
 from body.users_database import *
 from body.bill import *
 
@@ -13,16 +13,18 @@ try:
 except NameError:
     new_input = input
 
+
 class CoffeeShop(object):
-    def __init__(self, user, beverage=None, cost_beverage=0, add=None, cost_add=0):
+    def __init__(self, user, beverage=None, cost_beverage=0, add=None, cost_add=0, total_cost=0):
         self.beverage = beverage
         self.add = add
         self.cost_beverage = cost_beverage
         self.cost_add = cost_add
+        self.total_cost = total_cost
         CoffeeShop.menu(self, item=beverage, type_of_item="beverage")
         CoffeeShop.menu(self, item=add, type_of_item="add")
         Bill.save_last_bill(user=user.username, beverage=self.beverage, cost_of_beverage=self.cost_beverage,
-                                      add=self.add, cost_of_add=self.cost_add, total_cost=self.total_cost)
+                            add=self.add, cost_of_add=self.cost_add, total_cost=self.total_cost)
         DataBase.refresh_user(username=user.username, value=self.total_cost)
         progress_logger.info("CoffeeShop completed")
 

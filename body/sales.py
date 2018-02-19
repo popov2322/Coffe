@@ -7,6 +7,7 @@ import sqlite3
 from body.constants import *
 from body.configured_logger import *
 
+
 class Sales:
     def __init__(self):
         db_data = Sales.get_db_data()
@@ -19,7 +20,6 @@ class Sales:
         cursor.execute("SELECT name, number_of_sales, total_value FROM users WHERE position = 'Salesman'")
         return cursor.fetchall()
 
-
     @staticmethod
     def data_printer(data):
         full_total_value = 0
@@ -27,7 +27,7 @@ class Sales:
         print_logger.info("Seller name         |   Number of sales  |  Total Value(c.u.)")
         for string in data:
             name, number_of_sales, total_value = string[0], string[1], string[2]
-            print_logger.info("{1:^20}{0}{2:^20}{0}{3:^20}".format("|",name, number_of_sales, total_value))
+            print_logger.info("{1:^20}{0}{2:^20}{0}{3:^20}".format("|", name, number_of_sales, total_value))
             full_total_value += total_value
             full_number_of_sales += number_of_sales
         print_logger.info("{1:^20}{0}{2:^20}{0}{3:^20}".format("|", "Total:", full_number_of_sales, full_total_value))

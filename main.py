@@ -3,8 +3,6 @@
 
 __author__ = "Popov Dmitriy"
 
-"""Лаунчер CoffeeForMe"""
-
 from body import *
 
 

@@ -7,6 +7,7 @@ import os
 from body.constants import *
 from body.configured_logger import *
 
+
 class Bill(object):
     users_directory = os.path.join(os.path.dirname(__name__), 'users')
 
@@ -17,7 +18,9 @@ class Bill(object):
         if not os.path.exists(Bill.users_directory):
             os.makedirs(Bill.users_directory)
         file = os.path.join(os.path.dirname(__name__), 'users', '{}'.format(user))
+
         """Saving last bill"""
+
         with open(file, "w") as f:
             bill = LongPrints.BILL.format(beverage, cost_of_beverage, add, cost_of_add, total_cost, user)
             f.write(bill)
@@ -35,4 +38,4 @@ class Bill(object):
                 print_logger.info(last_bill)
                 progress_logger.info("Last bill loaded successfully")
         except IOError:
-            error_logger.error("Last bill of {0} not found".format(user))
+            error_logger.error("Last bill of {} not found".format(user))

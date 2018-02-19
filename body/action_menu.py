@@ -3,14 +3,14 @@
 
 __author__ = "Popov Dmitriy"
 
-from body.users_database import *
-from body.constants import *
+from body.constants import LongPrints
 from body.bill import *
 from body.sales import *
 from body.shop_database import *
 from body.shop import *
 
 try:
+    pass
     new_input = raw_input
 except NameError:
     new_input = input
@@ -37,6 +37,7 @@ class ActionMenu(object):
             else:
                 progress_logger.info("CoffeeShop started...")
                 sell = CoffeeShop(self.user, beverage=self.beverage, add=self.add)
+                progress_logger.info("")
 
         elif number_of_operation == "2":
             if not self.user.position == "Salesman":
@@ -64,7 +65,7 @@ class ActionMenu(object):
                 Sales()
         elif number_of_operation == "5":
             progress_logger.info("Session finished")
-            print_logger.info("Good bye {}".format(self.user.username))
+            print_logger.info("Goodbye {}".format(self.user.username))
             quit()
 
         else:
