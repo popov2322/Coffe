@@ -20,10 +20,10 @@ In order to activate the interactive utility mode, you have to launch it without
 						
 ### OPERATIONS
 	
-	* Sell beverages. To sell beverages, you must enter the beverage itself and its additive(if the additive is not 	  needed just enter 'none'). After each sale last bill of current salesman will be automatically overwritten.
-	* See the beverage cost. Just enter the name of beverage.
-	* Load last bill
-	* See sales report
+* Sell beverages. To sell beverages, you must enter the beverage itself and its additive(if the additive is not 	  needed just enter 'none'). After each sale last bill of current salesman will be automatically overwritten.
+* See the beverage cost. Just enter the name of beverage.
+* Load last bill
+* See sales report
 
 ### WORKING WITH KEYS IN THE COMMAND LINE
 					
