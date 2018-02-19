@@ -54,7 +54,7 @@ To execute any actions in command line just launch utility with key -cmd:
 Examples of working with keys:
 
 Register a new manager:
-$python main.py -cmd -reg -u Artem -p Manager
+**$python main.py -cmd -reg -u Artem -p Manager**
 
 Manager artem view sales report:
 **$python main.py -cmd -u Artem -action 4**
