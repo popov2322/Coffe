@@ -18,6 +18,11 @@ In order to activate the interactive utility mode, you have to launch it without
 2. After autorization you will see command menu, where user can execute some operations.
 						
 						
+						
+						
+						
+						
+						
 						OPERATIONS
 	
 	
