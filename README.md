@@ -7,15 +7,15 @@ $python main.py
 
 In order to activate the interactive utility mode, you have to launch it without arguments(execute the commands, which were given above):
 
-1. Automatically displays a menu, that will offer to authorize or register a new user.
+* Automatically displays a menu, that will offer to authorize or register a new user.
 
-    REGISTRATION.  When you register a new user, you must specify the following data:
+    - REGISTRATION.  When you register a new user, you must specify the following data:
 	               Username, using the symbols of the main ascii table. For example: "John Doe". Registration will be performed if the username is valid and unique
 	               Current position: Salesman or Manager.
 		
-    AUTHORIZATION. In this step, you only need to specify the username, of a user, who was registered earlier.
+    - AUTHORIZATION. In this step, you only need to specify the username, of a user, who was registered earlier.
 	
-2. After autorization you will see command menu, where user can execute some operations.
+* After autorization you will see command menu, where user can execute some operations.
 						
 ### OPERATIONS
 	
